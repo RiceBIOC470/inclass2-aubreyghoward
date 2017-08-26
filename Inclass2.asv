@@ -51,8 +51,6 @@ end
 x = 1:100;
 q = sum(x)
 
-
-%%
 %c.
 xx = rand(50,2);
 
@@ -85,17 +83,35 @@ cosx = [cos(x)]';
 
 plot (x,sinx,'r--',x,cosx,'b-')
 
-%%
+
 %b. repeat the above but where each graph is in a different subplot in the
 % same figure. 
 
+%Adam Howard Answer:
+x = 0:0.1:(4*pi);
 
+sinx = [sin(x)]';
+cosx = [cos(x)]';
 
+plot (x,sinx,'r--')
+hold on
+plot (x,cosx,'b-')
+
+%%
 %c. here is some data, imagine they are x and y coordinates for cells. 
 xy_dat = rand(100,2);
+
 %plot the data in the xy plane.
+
+scatter ((xy_dat(:,1)),(xy_dat(:,2)))
+
+%%
 %now imagine there is some fluorescence data corresponding to the same
 %cells
 fluor = rand(100,1);
+
 % plot the data in the xy plane but color code the data by the fluorescnece
+xy_dat = rand(100,2);
+scatter ((xy_dat(:,1)),(xy_dat(:,2)),1,flour)
+
 % values. Hint: see the scatter command
